@@ -9,7 +9,7 @@ phases:
       - add-apt-repository ppa:openjdk-r/ppa
       - apt-get update -y
       - apt-get install -y openjdk-8-jdk-headless
-      - apt-get install -y maven
+      - echo apt-get install -y maven
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
@@ -20,7 +20,7 @@ phases:
       - echo Trying a plain old compile
       - javac HelloWorld.java
       - echo Now we go with maven
-      - mvn install -X
+      - echo mvn install -X
       - echo Building the Docker image...
       - docker build -t codebuild-poc-20190416 . 
   post_build:
